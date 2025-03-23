@@ -1,0 +1,250 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6.1in, 10in}]{geometry} % Tipo de documento
+\usepackage[utf8]{inputenc}   % Codificación de caracteres
+\usepackage[T1]{fontenc}      % Codificación de fuentes
+\usepackage{amsmath, amssymb} % Simbología matemática
+\usepackage{graphicx}         % Insertar imágenes
+\usepackage{hyperref}         % Hipervínculos
+\usepackage{multicol}         % Multiples columnas}
+\usepackage{xcolor}           % Colores
+\usepackage{enumitem}         % Items romanos
+
+% Información del documento
+\pagecolor[RGB]{255, 255, 255}
+\title{Practica 1: Lenguajes}
+\author{Philips}
+\date{1er Cuatrimestre 2025} % Fecha
+
+\begin{document}
+
+\maketitle % Genera el título
+
+\section*{Ejercicio 1}
+Sea $\Sigma$ = \{\textit{a, b}\} un alfabeto. Hallar:
+\\
+\\
+\centerline{$\Sigma^0,\ \ \ \Sigma^1,\ \ \ \Sigma^2,\ \ \ \Sigma^*,\ \ \ \Sigma^+,\ \ \ |\Sigma|,\ \ \ |\Sigma^0|$}
+
+\begin{itemize}
+    \item $\Sigma^0 = \{\lambda\}$
+    \item $\Sigma^1 = \{a,b\}$
+    \item $\Sigma^2 = \{aa,ab,ba,bb\}$
+    \item $\Sigma^* = \bigcup\limits_{i\geq0}\Sigma^i=\{\lambda,a,b,aa,ab,ba,bb,...\}$
+    \item $\Sigma^+ = \bigcup\limits_{i\geq0}\Sigma^i=\{a,b,aa,ab,ba,bb,...\}$
+    \item $|\Sigma| = 2$
+    \item $|\Sigma^0| = 1$
+\end{itemize}
+
+\section*{Ejercicio 2}
+Decidir si, dado $\Sigma$ = \{\textit{a, b}\}, vale:
+\\
+\\
+\centerline{\(\lambda \in \Sigma, \quad \lambda \subseteq \Sigma, \quad \lambda \in \Sigma^+, \quad \lambda \in \Sigma^*, \quad \Sigma^0 = \lambda, \quad \Sigma^0 = \{\lambda\}\)}
+
+\begin{itemize}
+    \item  $\lambda \in \Sigma \equiv \textcolor{red}{False}$
+    \item  $\lambda \subseteq \Sigma \equiv \textcolor{red}{False}$
+    \item  $\lambda \in \Sigma^+ \equiv \textcolor{red}{False}$
+    \item  $\lambda \in \Sigma^* \equiv \textcolor{blue}{True}$
+    \item  $\Sigma^0 = \lambda \equiv \textcolor{red}{False}$
+    \item  $\Sigma^0 = \{\lambda\} \equiv \textcolor{blue}{True}$
+\end{itemize}
+
+\section*{Ejercicio 3}
+Sea \textit{$\alpha = abb$} una cadena. Calcular:
+\\
+\\
+\centerline{$\alpha^0,\ \ \ \alpha^1,\ \ \ \alpha^2,\ \ \ \alpha^3,\ \ \ \prod_{k=0,...,3}{\alpha^k = \alpha^0.\alpha^1.\alpha^2.\alpha^3},\ \ \ \alpha^r$}
+
+\begin{itemize}
+    \item $\alpha^0 = \lambda$
+    \item $\alpha^1 = \textit{abb}$
+    \item $\alpha^2 = \textit{abb}{.}\textit{abb} = \textit{abbabb}$
+    \item $\alpha^3 = \textit{abb}{.}\textit{abb}{.}\textit{abb} = \textit{abbabbabb}$
+    \item $\prod_{k=0,...,3}{\alpha^k = \alpha^0.\alpha^1.\alpha^2.\alpha^3} = \lambda.\textit{abb}{.}\textit{abbabb}{.}\textit{abbabbabb}$
+    \item $\alpha^r = (\textit{abb})^r = \textit{bba}$
+\end{itemize}
+
+\section*{Ejercicio 4}
+Sean las cadenas \textit{$\alpha = abb$} y \textit{$\beta = acb$}. Calcular:
+\\
+\\
+\centerline{\(\alpha\beta, \quad (\alpha\beta)^r, \quad (\beta)^r, \quad \beta^r\alpha^r, \quad \lambda\alpha , \quad \lambda\beta, \quad \alpha\lambda\beta, \quad \alpha^2\lambda^3\beta^2\)}
+
+\begin{itemize}
+    \item $\alpha\beta = abbacb$
+    \item $(\alpha\beta)^r = bcabba$
+    \item $(\beta)^r = bca$
+    \item $\beta^r\alpha^r = bcabba$
+    \item $\lambda\alpha = abb$
+    \item $\lambda\beta = acb$
+    \item $\alpha\lambda\beta = abbacb$
+    \item $\alpha^2\lambda^3\beta^2 = abbabbacbacb$
+\end{itemize}
+
+\section*{Ejercicio 5}
+Dado un alfabeto $\Sigma$, sean \textit{x},\textit{y} $\in \Sigma$ y $\alpha,\beta \in \Sigma^*$. Demostrar que:
+\begin{enumerate}[label=\Roman*.]
+    \item $|x.(y.\alpha)| = 2 + |\alpha|$
+    \item $|\alpha^r|=|\alpha|$
+    \item $|\alpha x \beta| = |x \alpha \beta|$
+    \item $|\alpha . \alpha| = 2 |\alpha|$
+    \item $(\alpha . \beta)^r = \beta^r . \alpha^r$
+    \item $(\alpha^r)^r = \alpha$
+    \item $(\alpha^r)^n = (\alpha^n)^r$
+\end{enumerate}
+
+\begin{enumerate}[label=\roman*.,font=\itshape]
+    \item {Quiero demostrar que $|x.(y.\alpha)| = 2 + |\alpha|$.
+    \\
+    \\
+    {Como $x,y \in \Sigma$, usando la definición recursiva de longitud (L1), los puedo "sacar" de la operación de la cadena y sumar un 1 cada vez que uso la ya mencionada definición.}
+    \\
+    \\
+$|x\cdot(y\cdot\alpha)|\overset{\text{(L1)}}{=} 1 + |y\cdot\alpha|\overset{\text{(L1)}}{=} 2 + |\alpha|$}
+    \[
+    \blacksquare
+    \]
+    \\ 
+    \item {Quiero demostrar que $|\alpha^r|=|\alpha|$. 
+    \\ Pruebo por inducción estructural sobre $\alpha$: 
+    \\
+    \\
+    \centerline{1. Caso base: Si $\alpha = \lambda$:}
+    \\
+    \centerline{$|\lambda|^r =|\lambda| \hspace{1cm} (\text{def. r0, PREGUNTAR} )$}
+    \\
+    \\
+    \centerline{2. Caso inductivo: $\alpha = x.\alpha'$}
+    \\
+    \centerline{Suponemos que la propiedad vale para $\alpha'$}
+    \\
+    \\
+    \centerline{$|x.\alpha'|^r = |\alpha'^r.x| \hspace{1cm} (\text{def. r1} )$}
+    \\
+    ...}
+\end{enumerate}
+
+\section{Ejercicio 6}
+Dar ejemplos de cadenas que pertenezcan a los siguientes lenguajes:
+\begin{enumerate}[label=\Roman*.]
+    \item $\mathcal{L} = \{a^nb^n \mid n\geq 0\}$
+    \item $\mathcal{L} = \{a^nb^n \mid n\geq 1\}$
+    \item $\mathcal{L} = \{a^nb^m \mid n\geq 1 \land m\geq 1\}$
+    \item $\mathcal{L} = \{a^nb^m \mid n\geq 1 \land m\geq 0\}$
+    \item $\mathcal{L} = \{a^n(ac)^p(bab)^q \mid n \leq 0 \land q = p +2 \land p \geq 1\}$
+    \item $\mathcal{L} =  \{a,b\}^3 \cap \Lambda$
+    \item $\mathcal{L} = \{ \alpha\alpha^r \mid \alpha \in \{a,b\}^+\}$
+    \item $\mathcal{L} = \{ \alpha \in \{a,b\}^+ \mid \alpha = \alpha^+\}$
+    \\
+\end{enumerate}
+
+\begin{enumerate}[label=\roman*.,font=\itshape]
+    \item {$\mathcal{L} = \{a^nb^n \mid n\geq 0\}$
+    \\
+    \\
+    {Todas las palabras de $\mathcal{L}$ tienen la misma cantidad de $a$ y $b$, y $\lambda \in \mathcal{L}$.}
+    \\
+    \\
+    Ejemplos: \{$\lambda, ab, aabb, aaabbb$\}
+    \item {$\mathcal{L} = \{a^nb^n \mid n\geq 1\}$
+    \\
+    \\    
+    {Las palabras de $\mathcal{L}$ tienen, por lo menos, una $a$ y una $b$ ($\lambda \notin \mathcal{L}$), y la cantidad de apariciones de $a$ es igual a la cantidad de apariciones de $b$.}
+    \\
+    \\
+    Ejemplos: \{$ab, aabb, aaabbb$\}
+    \item {$\mathcal{L} = \{a^nb^m \mid n\geq 1 \land m\geq 1\}$
+    \\
+    \\
+    {No es necesario que las cantidades de aparición de $a$ y $b$ sean iguales pero deben aparecer al menos una vez en cada palabra, y $\lambda \notin \mathcal{L}$.}
+    \\
+    \\
+    Ejemplos: \{$ab, abb, aaaab, aaabbbb\}$}
+    \item {$\mathcal{L} = \{a^nb^m \mid n\geq 1 \land m\geq 0\}$
+    \\
+    \\    
+    {La cadena $b$ puede o no aparecer en la palabra. Por otro lado, la cadena $a$ siempre aparece, al menos, una vez en cada palabra de $\mathcal{L}$. Por último, $\lambda \notin \mathcal{L}$.}
+    \\
+    \\
+    Ejemplos: \{$a, abb, aaaaabbbb$\}}
+    \item {$\mathcal{L} = \{a^n(ac)^p(bab)^q \mid n \geq 0 \land q = p +2 \land p \geq 1\}$
+    \\
+    \\
+    {Las palabras de $\mathcal{L}$ tienen, al menos, una aparición de $ac$, ya que se cumple que $p \geq 1$. Además, dado que $q=p+2$, esto implica que $q\geq3$, por lo que todas las cadenas tienen, al menos, tres apariciones consecutivas de la subcadena $bab$ (o más). Por otro lado, la cadena $a$ puede o no aparecer en la palabra, ya que $n \geq 0$. Por último, la cantidad de apariciones de $bab$ está directamente determinada por la cantidad de apariciones de $ac$, siguiendo la relación $q = p+2$. Esto significa que siempre habrá más apariciones de $bab$ que de $ac$ en cualquier cadena de $\mathcal{L}$.}
+    \\
+    \\
+    Ejemplos: \{$aacbabbabbab, acacbabbabbabbab$\}}
+    \item {$\mathcal{L} =\{\{a,b\}^3 \cap \Lambda\}$
+    \\
+    \\    
+    {$\{a,b\}^3$ representa el conjunto de todas las cadenas de longitud $3$ formadas con los símbolos $a$ y $b$. Pero, como $\Lambda$ es el conjunto que contiene solamente la palabra vacía y todas las palabras que pertenecen a $\{a,b\}^3$ tienen longitud igual a $3$, la intersección entre ambos es vacía.}
+    \\
+    \\
+    Ejemplos: \{$\emptyset$\}}
+    \item {$\mathcal{L} = \{ \alpha\alpha^r \mid \alpha \in \{a,b\}^+\}$
+    \\
+    \\    
+    {Todas las palabras de $\mathcal{L}$ se forman concatenando una cadena que pertenezca $\{a,b\}^+$ con su reversa. Todas estas palabras tienen longitud mayor o igual que 2, por lo que $\lambda \notin \mathcal{L}$.}
+    \\
+    \\
+    Ejemplos: \{$aa, bb, baab$\}}
+    \item {$\mathcal{L} = \{ \alpha \in \{a,b\}^+ \mid \alpha = \alpha^+\}$
+    \\
+    \\    
+    {Todas las palabras de $\mathcal{L}$ son cadenas de la forma $\{a,b\}^+$ y cumplen que son iguales a su reversa. $\lambda \notin \mathcal{L}$ pues $\lambda \notin \{a,b\}^+$. PREGUNTAR}
+    \\
+    \\
+    Ejemplos: \{$a, b, aa, bb, aba, bab$\}}}
+    }
+\end{enumerate}
+
+\section*{Ejercicio 7}
+Definir por comprensión los siguientes lenguajes:
+\begin{enumerate}[label=\Roman*.]
+    \item $\mathcal{L}_1 = \{ab, aabb, aaabbb,...\}$
+    \item $\mathcal{L}_2 = \{aab, aaaabb, aaaaaabbb,...\}$
+    \item $\mathcal{L}_3 = \{aaabccc, aaaabcccc, aaaaabccccc,...\}$
+\end{enumerate}
+\begin{enumerate}[label=\roman*.,font=\itshape]
+    \item $\mathcal{L}_1 = \{a^nb^n \mid n\geq 1\}$
+    \item $\mathcal{L}_2 = \{a^nb^m \mid n =m*2 \land m\geq1\}$
+    \item $\mathcal{L}_3 = \{a^nbc^n \mid n\geq3\}$
+\end{enumerate}
+
+\section*{Ejercicio 8}
+Dados $\mathcal{L}_1= \{a,bc\}, \mathcal{L}_2 = \{aaa,bc\}$, y siendo $\Lambda = \{\lambda\}$, calcular:
+\begin{enumerate}[label=\Roman*.]
+    \item $\mathcal{L}_1 \cup \mathcal{L}_2 = \{a,bc,aaa\}$
+    \item $\mathcal{L}_1 \cap \mathcal{L}_2 = \{bc\}$
+    \item $\mathcal{L}_1 \cdot \mathcal{L}_2 = \{aaaa,abc,bcaaa,bcbc\}$
+    \item $\mathcal{L}_1 \cdot (\mathcal{L}_2)^0 = \{a,bc\}$
+    \item $\mathcal{L}_1 \cdot (\mathcal{L}_2)^2 = \mathcal{L}_1 \cdot\{aaaaaa,aaabc,bcaaa,bcbc\} \\
+    = \{aaaaaaa,aaaabc,abcaaa,abcbc,bcaaaaaa,bcaaabc,bcbcaaa,bcbcbc\}$
+    \item $\mathcal{L}_1 \cdot (\mathcal{L}_2)^+ = \mathcal{L}_1 \cdot\{aaa,bc,aaaaaa,bcbc,aaabc,bcaaa,...\} = \{aaaa,abc,bcbc,abcbc,bcaaabc,...\}$
+    \item $(\mathcal{L}_1 \cdot \mathcal{L}_2)^+ = \{aaaa,abc,bcaaa,bcbc,bca,aaabc,...\}$
+    \item $(\mathcal{L}_1 \cdot \mathcal{L}_2)^* = \{\lambda,a,aaa,bc,aaaa,abc,bcaaa,bcbc,bca,aaabc,...\}$
+    \item $\mathcal{L}_1 \cdot \Lambda \cdot \mathcal{L}_2 = \mathcal{L}_1 \cdot \mathcal{L}_2$
+    \item $\mathcal{L}_1 \cdot \emptyset \cdot \mathcal{L}_2 = \emptyset$
+    \item $(\mathcal{L}_1)^r = \{a^r,(bc)^r\} =\{a,cb\}$ PREGUNTAR
+    \item $(\mathcal{L}_1 \cdot \mathcal{L}_2)^r = \{aaaa,abc,bcaaa,bcbc\}^r$ \\
+    $ = \{(aaaa)^r,(abc)^r,(bcaaa)^r,(bcbc)^r\} = \{aaaa,cba,aaacb,cbcb\}$ PREGUNTAR
+\end{enumerate}
+
+\section*{Ejercicio 9}
+Determinar el complemento de los siguientes lenguajes, considerando los alfabetos indicados en cada caso.
+\begin{enumerate}[label=\Roman*.]
+    \item $\mathcal{L} = \Lambda$ para $\Sigma = \{a, b\}$
+    \item $\mathcal{L} = \{\lambda, a\}$ para $\Sigma = \{a\}$ y $\Sigma = \{a, b\}$
+    \item $\mathcal{L} = \{b\alpha \mid \alpha \in \{a, b\}^*\}$ para $\Sigma = \{a, b\}$
+    \item $\mathcal{L} = \{a^{2n} \mid n \geq 0\}$ para $\Sigma = \{a\}$ y $\Sigma = \{a, b\}$
+    \item $\mathcal{L} = \{\alpha_1 b \alpha_2 \mid \alpha_1, \alpha_2 \in \{a, b\}^* \land |\alpha_1| > |\alpha_2|\}$ para $\Sigma = \{a, b\}$
+\end{enumerate}
+\begin{enumerate}[label=\roman*.,font=\itshape]
+    \item $\mathcal{L}^c = \Sigma^*$
+    \item $\Sigma^* \backslash \{\lambda,a\} = \{aa,aaa,aaaa,...\}$ \\
+          $\Sigma^* \backslash \{\lambda, a\} =$ Todas las cadenas que se pueden formar con $a$ y $b$, sin $\lambda$ y la cadena "$a$".
+    \item $asd$
+\end{enumerate}
+
+\end{document}
