@@ -95,34 +95,101 @@ Dado un alfabeto $\Sigma$, sean \textit{x},\textit{y} $\in \Sigma$ y $\alpha,\be
 \end{enumerate}
 
 \begin{enumerate}[label=\roman*.,font=\itshape]
-    \item {Quiero demostrar que $|x.(y.\alpha)| = 2 + |\alpha|$.
+    \item Quiero demostrar que $|x.(y.\alpha)| = 2 + |\alpha|$.
     \\
     \\
-    {Como $x,y \in \Sigma$, usando la definición recursiva de longitud (L1), los puedo "sacar" de la operación de la cadena y sumar un 1 cada vez que uso la ya mencionada definición.}
+    {Como $x,y \in \Sigma$, usando la definición recursiva de longitud (||), los puedo "sacar" de la operación de la cadena y sumar un 1 cada vez que uso la ya mencionada definición.}
     \\
     \\
-$|x\cdot(y\cdot\alpha)|\overset{\text{(L1)}}{=} 1 + |y\cdot\alpha|\overset{\text{(L1)}}{=} 2 + |\alpha|$}
+$|x\cdot(y\cdot\alpha)|\overset{\text{(||)}}{=} 1 + |y\cdot\alpha|\overset{\text{(||)}}{=} 2 + |\alpha|$
     \[
     \blacksquare
     \]
     \\ 
-    \item {Quiero demostrar que $|\alpha^r|=|\alpha|$. 
-    \\ Pruebo por inducción estructural sobre $\alpha$: 
+    \item Quiero demostrar que $|\alpha^r|=|\alpha|$. \\ 
+    Pruebo por inducción estructural sobre $\alpha$: 
     \\
     \\
     \centerline{1. Caso base: Si $\alpha = \lambda$:}
     \\
-    \centerline{$|\lambda|^r =|\lambda| \hspace{1cm} (\text{def. r0, PREGUNTAR} )$}
+    \centerline{$|\alpha|^r =|\lambda| \hspace{1cm} (\text{def. r} )$}
     \\
     \\
-    \centerline{2. Caso inductivo: $\alpha = x.\alpha'$}
+    \centerline{2. Caso inductivo: $\alpha = x.\beta$}
     \\
+    \centerline{Suponemos que la propiedad vale para $\beta$}
+    \\
+    \\
+    \centerline{$|x.\beta|^r = |\beta^r.x| \hspace{1cm} (\text{def. r})$}
+    \centerline{$\quad = |\beta^r| + 1 \hspace{1cm} (\text{def. ||})$}
+    \centerline{$\quad = |\beta| + 1 \hspace{1cm} (\text{def. HI})$}
+    \centerline{$\quad = |x\cdot\beta| \hspace{1cm} (\text{def. ||})$}
+    \centerline{$\quad = |\alpha| \hspace{1cm} (\text{def. $\alpha$})$}
+    \[
+    \blacksquare
+    \]
+    \item Quiero demostrar que $|\alpha x \beta| = |x \alpha \beta|$. \\
+    Pruebo por inducción estructural sobre $\alpha$:
+    \\
+    \\
+    \centerline{1. Caso base: Si $\alpha = \lambda$:}
+    \\
+    \centerline{$|\lambda x\beta| \overset{\text{$\lambda$}}{=} |x\lambda\beta| \overset{\text{$\alpha$}}{=} |x\alpha\beta|$}
+    \\
+    \\
+    \centerline{2. Caso inductivo: $\alpha = y.\alpha'$}
+    \\
+    \centerline{Quiero ver si: $|y\alpha' x \beta| = |x y\alpha' \beta|$}
     \centerline{Suponemos que la propiedad vale para $\alpha'$}
     \\
     \\
-    \centerline{$|x.\alpha'|^r = |\alpha'^r.x| \hspace{1cm} (\text{def. r1} )$}
+    \centerline{$|(y\alpha')x\beta|\overset{\text{$||$}}{=} 1 + |\alpha'x\beta|$}
+    \centerline{$\quad \overset{\text{$HI$}}{=} 1 + |x\alpha'\beta|$}
+    \centerline{$\quad \overset{\text{||}}{=} 1 +1+ |\alpha'\beta|$}
+    \centerline{$\quad \overset{\text{$y$}}{=} 1 + |y\alpha'\beta|$}
+    \centerline{$\quad \overset{\text{$x$}}{=} |xy\alpha'\beta|$}
+    \centerline{$\quad \overset{\text{$\alpha$}}{=} |x\alpha\beta|$}
+    \[
+    \blacksquare
+    \]
+    \item Quiero demostrar que $|\alpha . \alpha| = 2 |\alpha|$. \\
+    Pruebo por inducción estructural sobre $\alpha$:
     \\
-    ...}
+    \\
+    \centerline{1. Caso base: Si $\alpha = \lambda$}
+    \centerline{$|\lambda\cdot\lambda| \overset{\text{$\cdot$}}{=} |\lambda| \overset{\text{||}}{=} 0 \overset{\text{Int}}{=}2.0 \overset{\text{||}}{=}2.|\lambda|$}
+    \\
+    \\
+    \centerline{2. Caso inductivo: $\alpha = x\beta$}
+    \centerline{Quiero ver si: $|x\beta x\beta| = 2|x\beta|$}
+    \centerline{Suponemos que la propiedad vale para $\beta$}
+    \\
+    \\
+    \centerline{$|x\beta.x\beta| \overset{\text{||}}{=} 1 + |\beta x \beta|$}
+    \centerline{$\quad \overset{\text{iii}}{=} 1 + |x\beta\beta|$}
+    \centerline{$\quad \overset{\text{||}}{=} 1 + 1 + |\beta\beta|$}
+    \centerline{$\quad \overset{\text{HI}}{=} 2(1 +|\beta|)$}
+    \centerline{$\quad \overset{\text{||}}{=} 2(|x\beta|)$}
+    \centerline{$\quad \overset{\text{$\alpha$}}{=} 2(|\alpha|)$}
+    \[
+    \blacksquare
+    \]
+    \item Quiero demostrar que $(\alpha . \beta)^r = \beta^r . \alpha^r$. \\
+    Pruebo por inducción estructural sobre $\alpha$:
+    \\
+    \\
+    \centerline{1. Caso base: Si $\alpha = \lambda$}
+    \centerline{$(\lambda.\beta)^r \overset{\text{$\lambda$}}{=} \beta^r\overset{\text{$\lambda$}}{=} \beta^r.\lambda \overset{\text{$r$}}{=} \beta^r.\lambda^r$}
+    \\
+    \\
+    \centerline{2. Caso inductivo: $\alpha = x\alpha'$}
+    \centerline{Quiero ver si: $(x\alpha' . \beta)^r = \beta^r . (x\alpha')^r$}
+    \centerline{Suponemos que la propiedad vale para $\beta$}
+    \\
+    \\
+    ...    
+    
+    
 \end{enumerate}
 
 \section{Ejercicio 6}
@@ -136,7 +203,6 @@ Dar ejemplos de cadenas que pertenezcan a los siguientes lenguajes:
     \item $\mathcal{L} =  \{a,b\}^3 \cap \Lambda$
     \item $\mathcal{L} = \{ \alpha\alpha^r \mid \alpha \in \{a,b\}^+\}$
     \item $\mathcal{L} = \{ \alpha \in \{a,b\}^+ \mid \alpha = \alpha^+\}$
-    \\
 \end{enumerate}
 
 \begin{enumerate}[label=\roman*.,font=\itshape]
@@ -244,7 +310,84 @@ Determinar el complemento de los siguientes lenguajes, considerando los alfabeto
     \item $\mathcal{L}^c = \Sigma^*$
     \item $\Sigma^* \backslash \{\lambda,a\} = \{aa,aaa,aaaa,...\}$ \\
           $\Sigma^* \backslash \{\lambda, a\} =$ Todas las cadenas que se pueden formar con $a$ y $b$, sin $\lambda$ y la cadena "$a$".
-    \item $asd$
+    \item $\mathcal{L}^c= \{\lambda\} \cup \{a\alpha \mid \alpha \in \{a,b\}^*\}$
+    \item $\{a^{2n +1} \mid n \geq 0\}$ Cadenas con cantidad impar de "$a$".\\
+          $\{a^{2n +1} \mid n \geq 0 \} \cup \{\alpha \mid \alpha \in \{a,b\}^* \land |\alpha|_b \geq 1\}$ Cadenas con cantidad impar de "$a$" y cadenas que contienen al menos una "$b$".
+    \item $\{\alpha_1b\alpha_2 \mid \alpha_1, \alpha_2 \in \{a, b\}^* \land |\alpha_1| \leq |\alpha_2|\} \cup \{\alpha \mid \alpha \in \{a,b\}^* \land |\alpha|_b = 0\}$ \\
+    Cadenas de forma $\alpha_1b\alpha_2$ pero con $|\alpha_1| \leq |\alpha_2|$, y cadenas que no contienen la "$b$".
 \end{enumerate}
 
+\section*{Ejercicio 10}
+Sea $\mathcal{L}$, $\mathcal{L}_1$, $\mathcal{L}_2$ lenguajes cualesquiera. Determinar si las siguientes afirmaciones son verdaderas o falsas. Si son verdaderas, demostrarlas. Si no, dar un contraejemplo.
+\begin{enumerate}[label=\Roman*.]
+    \item $\mathcal{L}^+ \subseteq \mathcal{L}^* \equiv \textcolor{blue}{True}$
+    \item $\mathcal{L}^+ \subsetneq \mathcal{L}^* \equiv \textcolor{red}{False}$
+    \item $\mathcal{L}^n \cdot \mathcal{L}^m = \mathcal{L}^{n+m} \hspace{0.1cm} \text{para todo } n,m \geq 0 \equiv \textcolor{blue}{True}$
+    \item $\mathcal{L}^n \subseteq \mathcal{L}^{n+1} \hspace{0.1cm} \text{para todo } n \geq 0\equiv \textcolor{blue}{True}$
+    \item $\mathcal{L}_1 \subseteq \mathcal{L}_2, n \geq 0 \Rightarrow (\mathcal{L}_1)^n \subseteq (\mathcal{L}_2)^n \equiv \textcolor{blue}{True}$
+    \item $\mathcal{L}_1 \subseteq \mathcal{L}_2 \Rightarrow (\mathcal{L}_1)^* \subseteq (\mathcal{L}_2)^* \equiv \textcolor{blue}{True}$
+    \item $(\mathcal{L}^*)^* = \mathcal{L}^* \equiv \textcolor{blue}{True}$
+    \item $(\mathcal{L}^+)^+ = \mathcal{L}^* \equiv \textcolor{red}{False}$
+    \item $(\mathcal{L}^+)^* = \mathcal{L}^* \equiv \textcolor{blue}{True}$
+    \item $(\mathcal{L}_1 \cup \mathcal{L}_2)^* = (\mathcal{L}_1)^* \cup (\mathcal{L}_2)^* \equiv \textcolor{red}{False}$
+    \item $(\mathcal{L}_1 \cap \mathcal{L}_2)^* = (\mathcal{L}_1)^* \cap (\mathcal{L}_2)^* \equiv \textcolor{red}{False}$
+    \item $(\mathcal{L}^2)^* = \mathcal{L}^* \equiv \textcolor{red}{False}$
+    \item $(\mathcal{L} \cup \mathcal{L}_2)^* = \mathcal{L}^* \equiv \textcolor{blue}{True}$
+    \item $(\mathcal{L}^n)^r = (\mathcal{L}^r)^n \hspace{0.1cm} \text{para todo } n \geq 0$
+    \item $(\mathcal{L}^*)^r = (\mathcal{L}^r)^* \equiv \textcolor{blue}{True}$
+\end{enumerate}
+\begin{enumerate}[label=\roman*.,font=\itshape]
+    \item Por definición: \\ 
+    $\mathcal{L}^+ = \bigcup_{n\geq1}\mathcal{L}^n \subseteq \bigcup_{n\geq1}\mathcal{L}^n \cup \mathcal{L}^0 = \bigcup_{n\geq0}\mathcal{L}^n = \mathcal{L}^*$
+    \item Contraejemplo: \\
+    Sea $\mathcal{L} = \{\lambda, a\}$, entonces $\mathcal{L}^+ \subseteq \mathcal{L}^*$ pero $\mathcal{L}^+ = \mathcal{L}^*$.
+    \item $3$.
+    \item $4$.
+    \item Por inducción en $n$: \\
+    $\bullet$ $\hspace{0.01cm}$ Caso base: si $n=0$, ${\mathcal{L}_1}^0 = {\mathcal{L}_2}^0 = \Lambda$. \\
+    $\bullet$ $\hspace{0.01cm}$ Caso inductivo: $n = m +1$. \\
+    Supongo que para $m \geq 0$ se cumple que: ${\mathcal{L}_1}^m \subseteq {\mathcal{L}_2}^m$. Y, quiero ver que se cumple para $n = m + 1$. \\
+    Sea $\alpha \in {\mathcal{L}_1}^n$, esto quiere decir que $\alpha = \beta\cdot\gamma$ con $\beta \in \mathcal{L}_1$ y $\gamma \in {\mathcal{L}_1}^m$. \\
+    Entonces, $\beta \in \mathcal{L}_2$ y $\gamma \in {\mathcal{L}_2}^m$, pues por $HI$ $\mathcal{L}_1 \subseteq \mathcal{L}_2$ y ${\mathcal{L}_1}^m \subseteq {\mathcal{L}_2}^m$. Luego, $\alpha \in {\mathcal{L}_2}^{m+1} = {\mathcal{L}_2}^{n}$.
+    \item $6$.
+    \item $7$.
+    \item Contraejemplo: \\
+    Sea $\mathcal{L} = \{a\} \to \lambda \notin (\mathcal{L}^+)^+$, pero $\lambda \in (\mathcal{L}^*)$. Por lo tanto, $(\mathcal{L}^+)^+ \neq (\mathcal{L}^*)$.
+    \item $9$.
+    \item Contraejemplo: \\
+    Sea $\mathcal{L}_1 = \{a\},\mathcal{L}_2 = \{b\}, ab \in (\mathcal{L}_1\cup \mathcal{L}_2)^*$ pero $ab \notin \mathcal{L}_1^* \cup \mathcal{L}_2^*$.
+    \item Contraejemplo: \\
+    Sean $\mathcal{L}_1 = b$ y $\mathcal{L}_2 = bb$. \\
+    $(\mathcal{L}_1 \cap \mathcal{L}_2)^* = \emptyset^* = \Lambda$. Pero, $(\mathcal{L}_1)^* \cap (\mathcal{L}_2)^* = \{\lambda, a,aa,aaa,...\} \cap \{\lambda, aa, aaaa,...\} \neq \Lambda$.
+    \item Contraejemplo: \\
+    Sea $\mathcal{L} = \{a\}, a \in \mathcal{L}^*$ pero $a \notin (\mathcal{L}_2)^*$.
+    \item $13$.
+    \item $14$.
+    \item $15$.
+\end{enumerate}
+
+\section{Ejercicio 11}
+Siendo: 
+\begin{itemize}
+    \item $Sub(\mathcal{L})$: subcadenas del lenguaje $\mathcal{L}$.
+    \item $Ini(\mathcal{L})$: subcadenas iniciales (prefijos) del lenguaje $\mathcal{L}$.
+    \item $Fin(\mathcal{L})$: subcadenas finales (sufijos) del lenguaje $\mathcal{L}$.
+\end{itemize}
+Demostrar que si $\mathcal{L}_1$ y $\mathcal{L}_2$ son lenguajes:
+\begin{enumerate}[label = \Roman*.]
+    \item $\text{Fin}(\text{Fin}(\mathcal{L}_1)) = \text{Fin}(\mathcal{L}_1)$.
+    \item $\text{Sub}(\text{Sub}(\mathcal{L}_1)) = \text{Sub}(\mathcal{L}_1)$.
+    \item $\text{Fin}(\mathcal{L}_1 \mathcal{L}_2) = \text{Fin}(\mathcal{L}_2) \cup \text{Fin}(\mathcal{L}_1) \mathcal{L}_2$.
+    \item $\text{Ini}(\mathcal{L}_1 \cup \mathcal{L}_2) = \text{Ini}(\mathcal{L}_1) \cup \text{Ini}(\mathcal{L}_2)$.
+    \item $\text{Fin}(\mathcal{L}_1 \cup \mathcal{L}_2) = \text{Fin}(\mathcal{L}_1) \cup \text{Fin}(\mathcal{L}_2)$.
+    \item $\text{Ini}(\text{Sub}(\mathcal{L}_1)) = \text{Sub}(\text{Ini}(\mathcal{L}_1)) = \text{Fin}(\text{Sub}(\mathcal{L}_1)) = \text{Sub}(\text{Fin}(\mathcal{L}_1)) = \text{Sub}(\mathcal{L}_1)$.
+\end{enumerate}
+\begin{enumerate}[label=\roman*.,font=\itshape]
+    \item $1$.
+    \item $2$.
+    \item $3$.
+    \item $4$.
+    \item $5$.
+    \item $6$.
+\end{enumerate}
 \end{document}
