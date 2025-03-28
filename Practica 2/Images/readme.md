@@ -1,0 +1,1 @@
+Imagenes para los autómatas.
