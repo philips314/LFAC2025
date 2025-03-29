@@ -15,7 +15,7 @@ Agregar un 1 al final del número $\to$ duplica a $x$ y le suma $1$.
 
 Lo voy a analizar para cada congruencia $\pmod{5}$:  
 $x \equiv 0 \pmod{5}$ \
-$\rightarrow_0 \quad 2x \equiv 0 \pmod{5}$ \
+$\rightarrow_0 \quad 2x \equiv 0 \pmod{5} \checkmark$ \
 $\rightarrow_1 \quad 2x + 1 \equiv 1 \pmod{5}$
 
 $x \equiv 1 \pmod{5}$ \
@@ -24,7 +24,7 @@ $\rightarrow_1 \quad 2x + 1  \equiv 3 \pmod{5}$
 
 $x \equiv 2 \pmod{5}$ \
 $\rightarrow_0 \quad 2x \equiv 4 \pmod{5}$ \
-$\rightarrow_1 \quad 2x + 1 \equiv 0 \pmod{5}$
+$\rightarrow_1 \quad 2x + 1 \equiv 0 \pmod{5} \checkmark$
 
 $x \equiv 3 \pmod{5}$ \
 $\rightarrow_0 \quad 2x \equiv 1 \pmod{5}$ \
@@ -32,4 +32,5 @@ $\rightarrow_1 \quad 2x + 1 \equiv 2 \pmod{5}$
 
 $x \equiv 4 \pmod{5}$ \
 $\rightarrow_0 \quad 2x \equiv 3 \pmod{5}$ \
-$\rightarrow_1 \quad 2x + 1 \equiv 4 \pmod{5}$
+$\rightarrow_1 \quad 2x + 1 \equiv 4 \pmod{5}$  
+![](./Images/1ej5.png)  
