@@ -9,7 +9,7 @@
 ### IV. Cadenas sobre Σ = {0, 1} con cantidad par de ceros y cantidad impar de unos.  
 ![](./Images/1ej4.png)  
 ### V. Cadenas sobre Σ = {0, 1} que, interpretadas como un número binario, sean congruentes a cero módulo 5.  
-![](./Images/1ej5.png)  
+![](./Images/1ej5new.png)  
 Sea un número $x$ escrito en binario.  
 Agregar un 0 al final del número $\to$ duplica a $x$.  
 Agregar un 1 al final del número $\to$ duplica a $x$ y le suma $1$.  
