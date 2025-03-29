@@ -7,6 +7,13 @@
 ### III. Cadenas sobre Σ = {0, 1} con cantidad impar de unos.  
 ![](./Images/1ej3.png)  
 ### IV. Cadenas sobre Σ = {0, 1} con cantidad par de ceros y cantidad impar de unos.  
+Pensar en que existen 4 estados y observar como pasar de uno al otro:  
+Sea $q(x,y)$, donde x indica la paridad de 0 e y la paridad de 1.  
+1. $q(P,P)$  
+2. $q(P,I) \to$ estado de salida.  
+3. $q(I,P)$  
+4. $q(I,I)$  
+Entonces...  
 ![](./Images/1ej4.png)  
 ### V. Cadenas sobre Σ = {0, 1} que, interpretadas como un número binario, sean congruentes a cero módulo 5.  
 ![](./Images/1ej5new.png)  
