@@ -1,11 +1,14 @@
 # Práctica 2 / Ejercicio 1  
 ## Construir autómatas finitos para los siguientes lenguajes:  
 ### I. Cadenas sobre Σ = {0} de longitud par.  
-![](./Images/1ej1.png)
+<img src="./Images/1ej1.png" style="width: 200px;">
+
 ### II. Cadenas sobre Σ = {0, 1} con cantidad par de ceros.  
-![](./Images/1ej2.png)  
+<img src="./Images/1ej2.png" style="width: 200px;">
+
 ### III. Cadenas sobre Σ = {0, 1} con cantidad impar de unos.  
-![](./Images/1ej3.png)  
+<img src="./Images/1ej3.png" style="width: 200px;">
+
 ### IV. Cadenas sobre Σ = {0, 1} con cantidad par de ceros y cantidad impar de unos.  
 Pensar en que existen 4 estados y observar como pasar de uno al otro:  
 Sea $q(x,y)$, donde x indica la paridad de 0 e y la paridad de 1.  
@@ -14,9 +17,11 @@ Sea $q(x,y)$, donde x indica la paridad de 0 e y la paridad de 1.
 3. $q(I,P)$  
 4. $q(I,I)$  
 Entonces...  
-![](./Images/1ej4.png)  
+<img src="./Images/1ej4.png" style="width: 300px;">
+
 ### V. Cadenas sobre Σ = {0, 1} que, interpretadas como un número binario, sean congruentes a cero módulo 5.  
-![](./Images/1ej5new.png)  
+<img src="./Images/1ej5new.png" style="width: 400px;">
+
 Sea un número $x$ escrito en binario.  
 Agregar un 0 al final del número $\to$ duplica a $x$.  
 Agregar un 1 al final del número $\to$ duplica a $x$ y le suma $1$.  
