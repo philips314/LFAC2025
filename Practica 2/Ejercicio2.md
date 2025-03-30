@@ -14,6 +14,6 @@
 
 ### V. Cadenas que contengan la subcadena 000 exactamente una vez (no la 000).  
 Aclaración: Use los automatas `III` y `IV` respectivamente. Además, los estados `q4` y `q8` son trampa.
-<img src="./Images/2ej5.png" style="width: 550px;">
+<img src="./Images/2ej5.png" style="width: 600px;">
 
 ### VI. Cadenas que no contengan la subcadena 000 ni la 010.  
