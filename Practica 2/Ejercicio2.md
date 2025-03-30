@@ -7,6 +7,7 @@
 <img src="./Images/2ej2.png" style="width: 400px;">
 
 ### III. Cadenas que contengan la subcadena 000.  
+<img src="./Images/2ej3.png" style="width: 400px;">
 
 ### IV. Cadenas que no contengan la subcadena 000.  
 
