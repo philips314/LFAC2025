@@ -8,18 +8,18 @@ Sean:
 <img src="./Images/3ej1.png" style="width: 300px;">
 
 ### II. Constantes enteras con signo.  
-<img src="./Images/3ej.png" style="width: 300px;">  
+<img src="./Images/3e2.png" style="width: 300px;">  
 
 ### III. Constantes enteras con signo opcional.  
-<img src="./Images/3ej.png" style="width: 300px;">  
+<img src="./Images/3e3.png" style="width: 300px;">  
 
 ### IV. Constantes reales con signo.  
 Ejemplos: `+123.456, -55.0, +00.430`  
-<img src="./Images/3ej.png" style="width: 300px;">  
+<img src="./Images/3e4.png" style="width: 300px;">  
 
 ### V. Constantes reales con signo opcional y partes enteras y fraccionarias opcionales.   
 Ejemplos:  `los anteriores más 123.456, -55., +.43`     
-<img src="./Images/3ej.png" style="width: 300px;">   
+<img src="./Images/3e5.png" style="width: 300px;">   
 
 ### VI. Constantes reales con notación exponencial opcional.  
 Ejemplos: `los anteriores más -55.E5, +.43E-6`   
