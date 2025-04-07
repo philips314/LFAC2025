@@ -41,23 +41,39 @@ Dado un AFD $M=<Q,Σ,δ,q_0,F>$ definimos otro AFND-λ $M^r = <Q',Σ,δ^r,q_0',F
 ## IV.  
 Ini(ℒ) = {𝛼 | ∃𝛽 tal que 𝛼𝛽 ∈ ℒ}, los prefijos de ℒ
 ```
+Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ,q0,F'> donde:
+* F' son todos los estados de Q que pertenecen a cualquiera de los caminos de aceptación.
+ * Es decir, en F' pertenecen los estados que estan en algún camino entre q0 y un qf ∈ F.
+ * F' ⊆ Q
+* M' preserva el determinismo de M.
+* L(M′) = Ini(L(M))
 ```
 
 ## V.  
 Fin(ℒ) = {𝛼 | ∃𝛾 tal que 𝛾𝛼 ∈ ℒ}, los sufijos de ℒ
 ```
+Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ',q0,F> donde:
+* Extendemos δ, agregando transiciones vacias (λ) desde el estado inicial q0 hacia todos los estados
+  de Q que esten en algún camino entre q0 y algún estado final qf ∈ F.
 ```
 
 
 ## VI.  
 Sub(ℒ) = {𝛼 | ∃(𝛽, 𝛾) tales que 𝛾𝛼𝛽 ∈ ℒ}, las subcadenas de ℒ
 ```
+Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M' donde:
+* Combinamos lo modificado en el autómata sufijos y en el autómata prefijos, obteniendo a las subcadenas.
 ```
 
 
 ## VII.  
 Máx(ℒ) = {𝛼 ∈ ℒ | ∀𝜔 ∈ $Σ^+$, 𝛼𝜔 ∉ ℒ}, las cadenas maximales de ℒ
 ```
+Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ,q0,F'> donde:
+* F' ⊆ F, y solo el último de los estados finales de F pertenece a F'.
+* Es decir, en M' no podemos aceptar más cadenas a partir del estado final.
+* Si M tiene un estado final dento de un ciclo (M acepta cadenas arbitrariamente largas), modificamos ese estado para que no sea final en F'.
+* L(M′) = Máx(L(M))
 ```
 
 
