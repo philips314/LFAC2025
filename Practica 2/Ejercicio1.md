@@ -19,8 +19,25 @@ Sea $q(x,y)$, donde x indica la paridad de 0 e y la paridad de 1.
 Entonces...  
 <img src="./Images/1ej4.png" style="width: 300px;">
 
+| δ  | 0   | 1  |
+|:----- |:-----:| -----:|
+| start    | q2 | q1  |
+| q1    | q3 | start  |
+| q2    | start | q3  |
+| q3    | q1 | q2  |
+
 ### V. Cadenas sobre Σ = {0, 1} que, interpretadas como un número binario, sean congruentes a cero módulo 5.  
 <img src="./Images/1ej5new.png" style="width: 400px;">
+
+
+
+| δ  | 0   | 1  |
+|:----- |:-----:| -----:|
+| start    | start | ≡1  |
+| ≡1    | ≡2 | ≡3  |
+| ≡2    | ≡4 | start |
+| ≡3    | ≡1 | ≡2 |
+| ≡4    | ≡3 | ≡4 |
 
 Sea un número $x$ escrito en binario.  
 Agregar un 0 al final del número $\to$ duplica a $x$.  
