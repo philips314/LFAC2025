@@ -28,11 +28,11 @@ No importa el determinismo de M.
 <img src="./Images/4ej2.png" style="width: 500px;">  
 
 ## III.  
-$ℒ^r$, la reversa de ℒ.
+$ℒ^r$, la reversa de ℒ.  
 ```
 Desarrollo↓
 ```
-Dado un AFD $M=<Q,Σ,δ,q_0,F>$ definimos otro AFND-λ $M^r = <Q',Σ,δ^r,q_0',F'>$ tal que:
+Dado un AFD $M=<Q,Σ,δ,q_0,F>$ definimos otro AFND-λ $M^r = <Q',Σ,δ^r,q_0',F'>$ tal que:  
 * Q' = Q U { $q_0'$ }  (nuevo inicial)
 * $δ^r(q_0',λ) = F \quad$(empieza por los finales)
 * $(q_2 \in δ^r(q_1,a)) \leftrightarrow (q_1 \in δ(q_2,a)) \quad$(invertir las flechas)
@@ -50,7 +50,7 @@ Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ,q0,F'
 ```
 
 ## V.  
-Fin(ℒ) = {𝛼 | ∃𝛾 tal que 𝛾𝛼 ∈ ℒ}, los sufijos de ℒ
+Fin(ℒ) = {𝛼 | ∃𝛾 tal que 𝛾𝛼 ∈ ℒ}, los sufijos de ℒ  
 ```
 Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ',q0,F> donde:
 * Extendemos δ, agregando transiciones vacias (λ) desde el estado inicial q0 hacia todos los estados
@@ -59,7 +59,7 @@ Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ',q0,F
 
 
 ## VI.  
-Sub(ℒ) = {𝛼 | ∃(𝛽, 𝛾) tales que 𝛾𝛼𝛽 ∈ ℒ}, las subcadenas de ℒ
+Sub(ℒ) = {𝛼 | ∃(𝛽, 𝛾) tales que 𝛾𝛼𝛽 ∈ ℒ}, las subcadenas de ℒ  
 ```
 Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M' donde:
 * Combinamos lo modificado en el autómata sufijos y en el autómata prefijos, obteniendo a las subcadenas.
@@ -67,23 +67,36 @@ Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M' donde:
 
 
 ## VII.  
-Máx(ℒ) = {𝛼 ∈ ℒ | ∀𝜔 ∈ $Σ^+$, 𝛼𝜔 ∉ ℒ}, las cadenas maximales de ℒ
+Máx(ℒ) = {𝛼 ∈ ℒ | ∀𝜔 ∈ $Σ^+$, 𝛼𝜔 ∉ ℒ}, las cadenas maximales de ℒ  
 ```
 Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ,q0,F'> donde:
-* F' ⊆ F, y solo el último de los estados finales de F pertenece a F'.
+* F' ⊆ F, y para todo camino de aceptación desde q0 que pasa por varios estados finales, solo
+  nos quedamos con los últimos de cada camino.
 * Es decir, en M' no podemos aceptar más cadenas a partir del estado final.
-* Si M tiene un estado final dento de un ciclo (M acepta cadenas arbitrariamente largas), modificamos ese estado para que no sea final en F'.
+* Si M tiene un estado final dento de un ciclo (M acepta cadenas
+  arbitrariamente largas), modificamos ese estado para que no sea final en F'.
 * L(M′) = Máx(L(M))
 ```
 
 
 ## VIII.  
-Mín(ℒ) = {𝛼 ∈ ℒ | ningún prefijo propio de 𝛼 pertenece a ℒ}, las cadenas minimales de ℒ. 
-Es decir, Mín(ℒ) = {𝛼 ∈ ℒ | ∄($𝜔_1$, $𝜔_2$) tales que 𝛼 = $𝜔_1𝜔_2$ ∧ $𝜔_1$ ∈ ℒ ∧ $𝜔_2$ ≠ 𝜆}.
+Mín(ℒ) = {𝛼 ∈ ℒ | ningún prefijo propio de 𝛼 pertenece a ℒ}, las cadenas minimales de ℒ.  
+Es decir, Mín(ℒ) = {𝛼 ∈ ℒ | ∄($𝜔_1$, $𝜔_2$) tales que 𝛼 = $𝜔_1𝜔_2$ ∧ $𝜔_1$ ∈ ℒ ∧ $𝜔_2 \neq$  𝜆}.  
 ```
+Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ',q0,F'> donde:
+* F' ⊆ F, y para todo camino de aceptación desde q0 que pasa por varios estados finales, solo
+  nos quedamos con los primeros de cada camino.
+* En δ' sacamos todas las transiciones (en δ) desde cualquiera de los estados finales en F'.
+* Es necesario pedir que M sea un AFD para garantizar que no exista otro camino distinto que acepte
+  como prefijos a las cadenas min.
 ```
 
 ## X.  
 $ℒ_𝑇$ = {𝛼 ∈ $Σ^∗$| ∃($𝜔_1$ ∈ ℒ, $𝜔_2$ ∈ $Σ^∗$) tales que 𝛼 = $𝜔_1𝜔_2$} = $ℒ.Σ^*$
 ```
+Closure por sufijos a derecha (right-quotient closure).
+ℒ𝑇 es el conjunto de todas las cadenas que empiezan con una cadena de ℒ, y le siguen cadenas de Σ*.
+Dado un autómata M=<Q,Σ,δ,q0,F>, construimos otro autómata M'=<Q,Σ,δ',q0,F> donde:
+* En δ' extendemos a δ agregando transiciones desde cada estado final hacía si mismo para todo símbolo de Σ.
+* Así, una vez que el autómata alcanza un estado final, acepta cualquier continuación.
 ```
