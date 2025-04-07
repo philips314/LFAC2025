@@ -30,10 +30,16 @@ No importa el determinismo de M.
 ## III.  
 $ℒ^r$, la reversa de ℒ.
 ```
+Desarrollo↓
 ```
+Dado un AFD $M=<Q,Σ,δ,q_0,F>$ definimos otro AFND-λ $M^r = <Q',Σ,δ^r,q_0',F'>$ tal que:
+* Q' = Q U { $q_0'$ }  (nuevo inicial)
+* $δ^r(q_0',λ) = F \quad$(empieza por los finales)
+* $(q_2 \in δ^r(q_1,a)) \leftrightarrow (q_1 \in δ(q_2,a)) \quad$(invertir las flechas)
+* F' = { $q_0$ }  (termina en el estado que era inicial)
 
 ## IV.  
-Ini(ℒ) = {𝛼 | ∃𝛽 tal que 𝛼𝛽 ∈ ℒ}, los prefijos de ℒ.
+Ini(ℒ) = {𝛼 | ∃𝛽 tal que 𝛼𝛽 ∈ ℒ}, los prefijos de ℒ
 ```
 ```
 
@@ -44,12 +50,24 @@ Fin(ℒ) = {𝛼 | ∃𝛾 tal que 𝛾𝛼 ∈ ℒ}, los sufijos de ℒ
 
 
 ## VI.  
-Sub(ℒ) = {𝛼 | ∃(𝛽, 𝛾) tales que 𝛾𝛼𝛽 ∈ ℒ}, las subcadenas de ℒ.
+Sub(ℒ) = {𝛼 | ∃(𝛽, 𝛾) tales que 𝛾𝛼𝛽 ∈ ℒ}, las subcadenas de ℒ
 ```
 ```
 
 
 ## VII.  
 Máx(ℒ) = {𝛼 ∈ ℒ | ∀𝜔 ∈ $Σ^+$, 𝛼𝜔 ∉ ℒ}, las cadenas maximales de ℒ
+```
+```
+
+
+## VIII.  
+Mín(ℒ) = {𝛼 ∈ ℒ | ningún prefijo propio de 𝛼 pertenece a ℒ}, las cadenas minimales de ℒ. 
+Es decir, Mín(ℒ) = {𝛼 ∈ ℒ | ∄($𝜔_1$, $𝜔_2$) tales que 𝛼 = $𝜔_1𝜔_2$ ∧ $𝜔_1$ ∈ ℒ ∧ $𝜔_2$ ≠ 𝜆}.
+```
+```
+
+## X.  
+$ℒ_𝑇$ = {𝛼 ∈ $Σ^∗$| ∃($𝜔_1$ ∈ ℒ, $𝜔_2$ ∈ $Σ^∗$) tales que 𝛼 = $𝜔_1𝜔_2$} = $ℒ.Σ^*$
 ```
 ```
