@@ -2,6 +2,8 @@
 ## Construir autómatas finitos para los siguientes lenguajes sobre Σ = {0, 1}:   
 ### I. Cadenas que comiencen con 010.  
 <img src="./Images/2ej1.png" style="width: 400px;">
+--> Versión AFD completo.
+<img src="./Images/2ej2aCompleto.png" style="width: 400px;">
 
 ### II. Cadenas que terminen con 010.  
 <img src="./Images/2ej2.png" style="width: 400px;">
