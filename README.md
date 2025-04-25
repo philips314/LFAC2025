@@ -1,2 +1,2 @@
 # LFAC
-Practicas de Lenguajes Formales, Autómatas y Computabilidad
+Practicas y apuntes de Lenguajes Formales, Autómatas y Computabilidad
