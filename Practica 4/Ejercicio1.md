@@ -30,7 +30,7 @@ $\checkmark$ Es sintácticamente válida, es una abstracción.
 ## j. λx: if true then Bool else Nat. x  
 $\times$ if true then Bool else Nat no es un tipo valido para x.
 ## k. σ  
-$\times$ No es una expresion sintácticamente válidas, es un tipo cualquiera.  
+$\times$ No es una expresion sintácticamente válida, es un tipo cualquiera.  
 ## l. Bool  
 $\checkmark$ Es un tipo válido.
 ## m. Bool → Bool  
