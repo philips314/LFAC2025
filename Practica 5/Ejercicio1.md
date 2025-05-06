@@ -10,7 +10,7 @@ Cadenas que terminen con 010: `a`
 Cadenas que contengan la subcadena 000:  `a`  
 Cadenas que no contengan la subcadena 000:   `a`  
 ### Ejercicios del 3.  
-Identificadores de cualquier longitud que comiencen con una letra o guión y contengan letras, dígitos o guiones: `a`
+Identificadores de cualquier longitud que comiencen con una letra o guión y contengan letras, dígitos o guiones: `a`  
 Constantes enteras con signo: `a`  
 Constantes enteras con signo opcional: `a`  
 Constantes reales con signo: `a`  
